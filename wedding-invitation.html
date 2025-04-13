@@ -272,7 +272,7 @@
             font-family: 'Great Vibes', cursive;
             font-size: 1.7em;
             color: #ffffff;
-            margin-top: 50px;
+            margin-top: 20%;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
         }
 
@@ -294,14 +294,14 @@
             font-family: 'Great Vibes', cursive;
             font-size: 3em;
             color: #ffffff;
-            margin-top: 10px;
+            margin-top: 30%;
             animation: eleganGlow 2.5s ease-in-out infinite;
         }
 
 
         .card-yth {
             font-family: Arial, Helvetica, sans-serif;
-            margin-top: 20px;
+            margin-top: 40%;
             background: rgba(255, 255, 255, 0.214);
             border-radius: 20px;
             padding: 10px 20px 20px 20px;
@@ -340,7 +340,144 @@
         #audio {
             display: none;
         }
-        
+    </style>
+    <style>
+        .card-groom {
+            background: url('img/groom.jpg') center center / cover no-repeat;
+            padding: 30px 40px;
+            border-radius: 300px 300px 50px 50px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            height: 60%;
+            margin-top: 20%;
+            overflow: visible;
+            /* Pastikan elemen burung tidak terpotong */
+            position: relative;
+            /* Sudah kamu pakai */
+        }
+
+        .card-groom h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: #ffffff;
+            margin-top: -65%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+        }
+
+        .card-groom p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+            white-space: pre-line;
+            padding: 2px;
+        }
+
+        .burung-animasi {
+            width: 200px;
+            position: absolute;
+            /* bukan fixed */
+            bottom: -10%;
+            right: -40%;
+            /* biar sedikit keluar, tapi masih dalam konteks card-groom */
+            animation: terbangPelan 4s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .burung-anak {
+            width: 140px;
+            /* lebih kecil dari induk */
+            position: absolute;
+            bottom: -15%;
+            right: 10%;
+            /* sisi kiri */
+            transform: scaleX(-1);
+            /* agar saling menghadap */
+            animation: terbangPelanAnak 4s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .flower-chain {
+            width: 200px;
+            /* lebih kecil dari induk */
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            /* sisi kiri */
+            transform: scaleX(-1);
+            /* agar saling menghadap */
+            animation: terbangFlowerChain 4s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes terbangFlowerChain {
+
+            0%,
+            100% {
+                transform: scaleX(-1) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) translateY(-10px);
+            }
+        }
+        @keyframes terbangPelanAnak {
+
+            0%,
+            100% {
+                transform: scaleX(-1) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) translateY(-10px);
+            }
+        }
+
+
+        @keyframes terbangPelan {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0px);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+        }
+    </style>
+    <style>
+        .card-bride {
+            background: url('img/bride.jpg') center center / cover no-repeat;
+            padding: 30px 40px;
+            border-radius: 300px 300px 50px 50px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            height: 60%;
+            margin-top: 20%;
+            position: relative;
+        }
+
+        .card-bride h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: #ffffff;
+            margin-top: -65%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+        }
+
+        .card-bride p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+            white-space: pre-line;
+            padding: 2px;
+        }
     </style>
 </head>
 
@@ -371,13 +508,26 @@
 
 
     <section id="groom">
-        <h2>Groom</h2>
-        <p>Details about the groom.</p>
+        <div class="card-groom">
+            <img src="img/burung.png" alt="Burung" class="burung-animasi">
+            <img src="img/burung.png" alt="Anak Burung" class="burung-anak">
+            <img src="img/flower-chain.png" alt="flower-chain" class="flower-chain">
+            <h2>Andi Ardhana Putra</h2>
+            <p>Putra dari</p>
+            <p>Bapak Joko Widodo</p>
+            <p>Ibu Irinia Joko Widodo</p>
+        </div>
+
     </section>
 
     <section id="bride">
-        <h2>Bride</h2>
-        <p>Details about the bride.</p>
+        <div class="card-bride">
+            <img src="img/burung.png" alt="Burung" class="burung-animasi">
+            <img src="img/burung.png" alt="Anak Burung" class="burung-anak">
+            <h2>Indah Sari Putri</h2>
+            <p>Putri dari</p>
+            <p>Bapak Joko Widodo</p>
+            <p>Ibu Irinia Joko Widodo</p>
     </section>
 
     <section id="calendar">
@@ -411,36 +561,40 @@
             <i class="fas fa-map-marked-alt"></i>
             <span>Maps</span>
         </a>
+        <a href="#album">
+            <i class="fas fa-images"></i>
+            <span>Album</span>
+        </a>
     </div>
     <!--skrip pindah navgasi blur dan zoom-->
     <script>
         const navLinks = document.querySelectorAll('.sticky-nav a');
-    
+
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 // Menghapus kelas active dari semua link
                 navLinks.forEach(nav => {
                     nav.classList.remove('active');
                 });
-    
+
                 // Menambahkan kelas active ke link yang diklik
                 this.classList.add('active');
-    
+
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-    
+
                 // Tambah efek blur + zoom
                 targetSection.classList.add('section-blur');
-    
+
                 // Scroll langsung ke target section
                 targetSection.scrollIntoView({ behavior: 'auto' });
-    
+
                 // Setelah 1 detik, kembalikan ke normal (zoom out + hilang blur)
                 setTimeout(() => {
                     targetSection.classList.add('remove-blur');
-    
+
                     setTimeout(() => {
                         targetSection.classList.remove('section-blur', 'remove-blur');
                     }, 1000);
@@ -448,40 +602,40 @@
             });
         });
     </script>
-    
+
     <script>
         const btnBuka = document.getElementById('btn-buka');
         const audio = new Audio('music/bandaneira.mp3'); // Memuat musik
         let isAudioPlayed = false; // Untuk memeriksa apakah musik sudah diputar
-    
+
         btnBuka.addEventListener('click', function (e) {
             e.preventDefault();
             const targetSection = document.querySelector('#groom');
-    
+
             // Cek apakah musik sudah diputar
             if (!isAudioPlayed) {
                 // Memutar musik jika belum diputar
                 audio.play();
                 isAudioPlayed = true; // Tandai musik sudah diputar
             }
-    
+
             // Tambah efek blur + zoom
             targetSection.classList.add('section-blur');
-    
+
             // Scroll langsung ke #groom
             targetSection.scrollIntoView({ behavior: 'auto' });
-    
+
             // Setelah 1 detik, mulai hilangkan blur dan zoom
             setTimeout(() => {
                 targetSection.classList.add('remove-blur');
-                
+
                 setTimeout(() => {
                     targetSection.classList.remove('section-blur', 'remove-blur');
                 }, 1000);
             }, 1000);
         });
     </script>
-    
+
 
 
 </body>
