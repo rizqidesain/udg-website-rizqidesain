@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan Spesial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            overflow-x: hidden;
+            /* Menyembunyikan scroll horizontal */
+        }
+
+        .section-blur::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(6px);
+            background-color: rgba(255, 255, 255, 0.08);
+            z-index: 99;
+            opacity: 1;
+            transition: opacity 1s ease;
+            pointer-events: none;
+            /* Tidak mengganggu interaksi */
+        }
+
+        .section-blur.remove-blur::after {
+            opacity: 0;
+            /* Menghilangkan blur */
+        }
+
+        .section-blur {
+            position: relative;
+            z-index: 1;
+            transition: transform 1s ease, opacity 1s ease;
+            transform: scale(1.05);
+            /* Zoom sedikit */
+            opacity: 0.7;
+            /* Efek transparansi */
+            transform-origin: center;
+            /* Zoom dimulai dari tengah */
+        }
+
+        .section-blur.remove-blur {
+            transform: scale(1);
+            /* Kembali ke ukuran normal */
+            opacity: 1;
+            /* Kembali ke opacity normal */
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #fef9f8, #ffe0e9);
+            color: #333;
+            padding-bottom: 80px;
+        }
+
+        section {
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image: url('img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            /* Supaya teks tetap terlihat di atas gambar */
+        }
+
+        .sticky-nav {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            width: auto;
+            border-radius: 10px;
+            background: #2a4161;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.26);
+            z-index: 1000;
+        }
+
+        .sticky-nav a {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.85em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .sticky-nav span {
+            font-size: 0.7em;
+        }
+
+        .sticky-nav i {
+            font-size: 1.2em;
+            margin-bottom: 4px;
+        }
+
+        .sticky-nav a.active {
+            background-color: #0d2444;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .sticky-nav a:hover {
+            background: #0d2444;
+            border-radius: 10px;
+        }
+
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .sticky-nav a {
+                font-size: 8px;
+                padding: 14px 0;
+            }
+
+            section p {
+                max-width: 600px;
+            }
+        }
+    </style>
+    <style>
+        /* ============== OPENING ============== */
+        /* Card transparan di tengah */
+        .card-opening {
+            background: rgba(255, 255, 255, 0.273);
+            padding: 30px 40px;
+            border-radius: 50px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            height: 70%;
+            margin-top: -50px;
+            position: relative;
+            /* Agar elemen di dalam bisa ditata relatif */
+        }
+
+        @keyframes goyangAtas {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            50% {
+                transform: translateX(-50%) rotate(1.5deg);
+            }
+
+            100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+        }
+
+        @keyframes goyangBawah {
+            0% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(182deg);
+            }
+
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+
+        .bunga-hias {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            animation: goyangAtas 5s ease-in-out infinite;
+        }
+
+        .bunga-bawah {
+            margin-top: -15px;
+            width: 280px;
+            position: relative;
+            z-index: 3;
+            pointer-events: none;
+            transform: rotate(180deg);
+            animation: goyangBawah 5s ease-in-out infinite;
+        }
+
+
+        @keyframes goyangAngin {
+            0% {
+                transform: translateY(-50%) rotate(25deg);
+            }
+
+            50% {
+                transform: translateY(-52%) rotate(27deg);
+            }
+
+            100% {
+                transform: translateY(-50%) rotate(25deg);
+            }
+        }
+
+        @keyframes goyangAnginKanan {
+            0% {
+                transform: translateY(-50%) rotate(50deg);
+            }
+
+            50% {
+                transform: translateY(-52%) rotate(52deg);
+            }
+
+            100% {
+                transform: translateY(-50%) rotate(50deg);
+            }
+        }
+
+        /* Kiri */
+        .bunga-kiri {
+            position: absolute;
+            left: 0px;
+            top: 90%;
+            width: 120px;
+            pointer-events: none;
+            z-index: 2;
+            animation: goyangAngin 4s ease-in-out infinite;
+        }
+
+        /* Kanan */
+        .bunga-kanan {
+            position: absolute;
+            right: 0px;
+            top: 90%;
+            width: 120px;
+            pointer-events: none;
+            z-index: 2;
+            animation: goyangAnginKanan 4s ease-in-out infinite;
+        }
+
+
+        .card-opening p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.7em;
+            color: #ffffff;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+        }
+
+        @keyframes eleganGlow {
+            0% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125), 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+
+            50% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125), 0 0 15px rgba(255, 255, 255, 0.7);
+            }
+
+            100% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125), 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .card-opening h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #ffffff;
+            margin-top: 10px;
+            animation: eleganGlow 2.5s ease-in-out infinite;
+        }
+
+
+        .card-yth {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.214);
+            border-radius: 20px;
+            padding: 10px 20px 20px 20px;
+            /* padding-top dikurangi */
+            color: #333;
+            font-size: 1em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+            max-width: 100%;
+        }
+
+        .card-yth p {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 0.8em;
+            color: #ffffff;
+            margin: 0;
+            padding: 2px;
+        }
+
+        .btn-buka {
+            font-size: 0.7em;
+            background: #2a4161;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-buka:hover {
+            background: #081c36;
+        }
+
+        #audio {
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <section id="opening">
+        <div class="card-opening">
+            <img src="img/bunga1.png" alt="Bunga" class="bunga-hias">
+            <p>You are invite to our wedding</p>
+            <h2>Andi & Sari</h2>
+            <p style="font-size: 1.3em; margin-top: 5px;">jum'at, 31 februari 2060</p>
+            <div class="card-yth">
+                <p>Kepada Yth:</p>
+                <p>Bapak/Ibu/Saudara/i</p>
+                <p style="font-size: 1.1em; font-weight: bold;">MOCH. RIZQI ALFIANTO</p>
+                <p>ditempat</p>
+            </div>
+            <button class="btn-buka" id="btn-buka">BUKA UNDANGAN</button>
+
+            <img src="img/bunga1.png" alt="Bunga Bawah" class="bunga-bawah">
+
+            <!-- Tambahan bunga kanan kiri -->
+            <img src="img/bunga2.png" alt="Bunga Kiri" class="bunga-kiri">
+            <img src="img/bunga2.png" alt="Bunga Kanan" class="bunga-kanan">
+        </div>
+    </section>
+
+
+
+    <section id="groom">
+        <h2>Groom</h2>
+        <p>Details about the groom.</p>
+    </section>
+
+    <section id="bride">
+        <h2>Bride</h2>
+        <p>Details about the bride.</p>
+    </section>
+
+    <section id="calendar">
+        <h2>Calendar</h2>
+        <p>Event calendar.</p>
+    </section>
+
+    <section id="maps">
+        <h2>Maps</h2>
+        <p>Location and maps.</p>
+    </section>
+
+    <div class="sticky-nav">
+        <a href="#opening">
+            <i class="fas fa-home"></i>
+            <span>Opening</span>
+        </a>
+        <a href="#groom">
+            <i class="fas fa-mars"></i>
+            <span>Groom</span>
+        </a>
+        <a href="#bride">
+            <i class="fas fa-venus"></i>
+            <span>Bride</span>
+        </a>
+        <a href="#calendar">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Calendar</span>
+        </a>
+        <a href="#maps">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>Maps</span>
+        </a>
+    </div>
+    <!--skrip pindah navgasi blur dan zoom-->
+    <script>
+        const navLinks = document.querySelectorAll('.sticky-nav a');
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Menghapus kelas active dari semua link
+                navLinks.forEach(nav => {
+                    nav.classList.remove('active');
+                });
+    
+                // Menambahkan kelas active ke link yang diklik
+                this.classList.add('active');
+    
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+    
+                // Tambah efek blur + zoom
+                targetSection.classList.add('section-blur');
+    
+                // Scroll langsung ke target section
+                targetSection.scrollIntoView({ behavior: 'auto' });
+    
+                // Setelah 1 detik, kembalikan ke normal (zoom out + hilang blur)
+                setTimeout(() => {
+                    targetSection.classList.add('remove-blur');
+    
+                    setTimeout(() => {
+                        targetSection.classList.remove('section-blur', 'remove-blur');
+                    }, 1000);
+                }, 1000);
+            });
+        });
+    </script>
+    
+    <script>
+        const btnBuka = document.getElementById('btn-buka');
+        const audio = new Audio('music/bandaneira.mp3'); // Memuat musik
+        let isAudioPlayed = false; // Untuk memeriksa apakah musik sudah diputar
+    
+        btnBuka.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetSection = document.querySelector('#groom');
+    
+            // Cek apakah musik sudah diputar
+            if (!isAudioPlayed) {
+                // Memutar musik jika belum diputar
+                audio.play();
+                isAudioPlayed = true; // Tandai musik sudah diputar
+            }
+    
+            // Tambah efek blur + zoom
+            targetSection.classList.add('section-blur');
+    
+            // Scroll langsung ke #groom
+            targetSection.scrollIntoView({ behavior: 'auto' });
+    
+            // Setelah 1 detik, mulai hilangkan blur dan zoom
+            setTimeout(() => {
+                targetSection.classList.add('remove-blur');
+                
+                setTimeout(() => {
+                    targetSection.classList.remove('section-blur', 'remove-blur');
+                }, 1000);
+            }, 1000);
+        });
+    </script>
+    
+
+
+</body>
+
+</html>
