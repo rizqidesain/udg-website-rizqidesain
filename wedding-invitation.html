@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
 
 
     <style>
@@ -31,7 +32,7 @@
 
 
         body {
-            background: linear-gradient(to bottom right, #ffffff, #476389);
+            background: linear-gradient(to bottom right, #666c75, #525b69);
             color: #333;
         }
 
@@ -137,7 +138,7 @@
             font-family: 'Great Vibes', cursive;
             font-size: 1.7em;
             color: #ffffff;
-            margin-top: 2em;
+            margin-top: -2.5em;
             text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.125);
         }
 
@@ -145,7 +146,7 @@
             font-family: 'Great Vibes', cursive;
             font-size: 3.5em;
             margin-top: 0.5em;
-            background: linear-gradient(to right, #FFD700, #ff8147, #FFD700);
+            background: linear-gradient(to right, #FFD700, #ff9747, #FFD700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -165,11 +166,11 @@
         }
 
         .card-yth p {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Aref Ruqaa', serif;
             font-size: 0.8em;
             color: #ffffff;
             margin: 0;
-            padding: 0.5vh;
+            padding: 0.1vh;
         }
 
         .btn-undangan {
@@ -201,9 +202,8 @@
         }
 
         .bunga-hias {
-            position: absolute;
-            top: -7vh;
-            left: 50%;
+            position: relative;
+            top: -10vh;
             transform: translateX(-50%);
             width: 70vw;
             animation: goyangAtas 5s ease-in-out infinite;
@@ -213,7 +213,6 @@
             top: -2vh;
             width: 70vw;
             position: relative;
-            left: -0.5em;
             z-index: 3;
             pointer-events: none;
             transform: rotate(180deg);
@@ -250,7 +249,7 @@
             }
         }
     </style>
-
+    <!--========== OPENING ==========-->
     <style>
         /* ============== cover ============== */
         .opening {
@@ -391,9 +390,9 @@
     </style>
     <!--========== BRIDE ==========-->
     <style>
-        /* ============== cover ============== */
+        /* ============== bride ============== */
         .bride {
-            height: 120vh;
+            height: 820px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -411,23 +410,55 @@
             text-align: center;
             max-width: 100vw;
             width: 40%;
-            height: 30%;
+            height: 27%;
             border-radius: 100vh 100vh 20vh 20vh;
             position: relative;
 
             display: flex;
             justify-content: center;
-            /* Horizontal center */
             align-items: center;
-            /* Vertical center */
+
             background-image: url('img/album-5.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+
+            /* Glass effect */
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Efek kilau animasi */
+        .card-bride::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.6) 50%,
+                    rgba(255, 255, 255, 0.2) 100%);
+            transform: rotate(25deg);
+            animation: shine 5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(25deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(25deg);
+            }
         }
 
         .bride-salam {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Times New Roman', Times, serif;
             font-style: italic;
             font-weight: 500;
             font-size: 0.9em;
@@ -469,9 +500,164 @@
             font-style: italic;
             padding: 0 5vh;
             /* 0 atas-bawah, 5% kanan-kiri */
-            margin-top: 1vh;
+            margin-top: -0.2vh;
             margin-bottom: 2vh;
 
+        }
+    </style>
+    <!--========== EVENT 1 COUNTDOWN ==========-->
+    <style>
+        /* ============== COUNTDOWN ============== */
+        .events-1 {
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+
+            background-image: url('img/album-7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .card-events-1 {
+            background: rgba(97, 102, 111, 0.559);
+            text-align: center;
+            max-width: 100vw;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            /* Horizontal center */
+            align-items: center;
+            /* Vertical center */
+        }
+
+        .card-events-1 button {
+            font-family: 'Amiri', serif;
+            font-size: 0.8em;
+            margin-top: 45vh;
+            border-radius: 5vh;
+            background: linear-gradient(to right, #d7b702, #ff9747, #d7b702);
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            color: #ffffff;
+            position: absolute;
+            padding: 3px 12px;
+            border: none;
+            cursor: pointer;
+        }
+        .card-events-1 i {
+            margin-right: 5px;
+        }
+
+
+        .judul-count {
+            font-family: 'Amiri', serif;
+            font-weight: bold;
+            font-size: 1em;
+            color: #fff;
+            padding: 10px 15px;
+            position: absolute;
+            margin-bottom: -8vh;
+            z-index: 1;
+        }
+
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+            gap: 15px;
+            margin-top: 25vh;
+            padding: 15px;
+            backdrop-filter: blur(5px);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .countdown-item {
+            padding: 10px 15px;
+            border-radius: 1vh;
+            min-width: 60px;
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            font-size: 0.8em;
+            color: #fff;
+        }
+    </style>
+    <!--========== EVENTS 2 ==========-->
+    <style>
+        /* ============== AKAD RESEPSI ============== */
+        .events-2 {
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .card-events-2 {
+            position: relative;
+            text-align: center;
+            max-width: 100vw;
+            width: 85%;
+            height: 30%;
+            border-radius: 3vh;
+            top: 10vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            /* penting untuk membatasi efek ke dalam card */
+            z-index: 1;
+        }
+
+        /* Layer background dengan opacity */
+        .card-events-2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+            /* ubah sesuai keinginan */
+            z-index: -1;
+        }
+
+        .card-events-2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+            /* ubah sesuai keinginan */
+            z-index: -1;
+        }
+
+        .card-events-2 h2 {
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            /* Bold */
+            font-size: 2em;
+            color: #fff;
+            margin-top: -20vh;
         }
     </style>
     <!--========== HARUS DIBAWAH ==========-->
@@ -518,29 +704,108 @@
             animation: zoomIn 0.8s ease-out forwards;
         }
 
+        /* Slide Down */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-down-animate {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        /* Slide Up */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-up-animate {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        /* Zoom */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+
         #audio {
             display: none;
+        }
+
+        .music-btn {
+            position: fixed;
+            top: 40px;
+            right: 10px;
+            z-index: 9999;
+            background-color: rgba(255, 213, 0, 0.837);
+            border: none;
+            border-radius: 50%;
+            padding: 9px 12px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .music-btn:hover {
+            background-color: rgba(255, 213, 0, 0.837);
+        }
+
+        .music-btn i {
+            font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
 
 <body>
+    <button id="musicControl" class="music-btn hidden-section zoom-target">
+        <i id="musicIcon" class="fas fa-pause"></i>
+    </button>
+
     <section id="cover" class="cover">
-        <div class="card-cover">
-            <img src="img/bunga1.png" alt="Bunga" class="bunga-hias">
-            <p>You are invited to our wedding</p>
-            <h2>Andi & Sari</h2>
-            <p style="font-size: 1.3em; margin-top: 5px;">jum'at, 31 Februari 2060</p>
+        <div class="card-cover zoom-target">
+            <img src="img/bunga1.png" alt="Bunga" class="bunga-hias zoom-target">
+            <p class="zoom-target">You are invited to our wedding</p>
+            <h2 class="zoom-target">Andi & Sari</h2>
+            <p class="zoom-target" style="font-size: 1.3em; margin-top: 5px;">Jum'at, 31 Februari 2060</p>
             <div class="card-yth">
                 <p>Kepada Yth:</p>
                 <p>Bapak/Ibu/Saudara/i</p>
                 <p id="nama-tamu" style="font-size: 1.1em; font-weight: bold;">TAMU</p>
                 <p>ditempat</p>
             </div>
-            <a href="#" class="btn-undangan" id="openInvitationBtn">
+            <a href="#" class="btn-undangan zoom-target" id="openInvitationBtn">
                 <i class="fas fa-envelope"></i> Buka Undangan
             </a>
-            <img src="img/bunga1.png" alt="Bunga Bawah" class="bunga-bawah">
+            <img src="img/bunga1.png" alt="Bunga Bawah" class="bunga-bawah  zoom-target">
         </div>
     </section>
 
@@ -562,6 +827,7 @@
             </div>
         </div>
     </section>
+
     <section id="bride" class="bride hidden-section">
         <div class="bride-salam zoom-target">
             Assalamualaikum, Wr.Wb <br>
@@ -571,17 +837,43 @@
         </div>
         <div class="card-bride zoom-target"></div>
         <div class="bride-pria zoom-target">Andi Ardhana Putra</div>
-        <p class="bride-family">putra dari Bapak Joko Widodo dan Ibu Iriana Joko Widodo</p>
+        <p class="bride-family slide-up">putra dari Bapak Joko Widodo dan Ibu Iriana Joko Widodo</p>
         <div class="bride-wanita zoom-target">Sari Anindya Putri</div>
-        <p class="bride-family">putrai dari Bapak Joko Widodo dan Ibu Iriana Joko Widodo</p>
-    </section>
-    <section id="calendar" class="calendar hidden-section">
-    </section>
-    <section id="maps" class="maps hidden-section">
-    </section>
-    <section id="album" class="album hidden-section">
+        <p class="bride-family slide-up">putrai dari Bapak Joko Widodo dan Ibu Iriana Joko Widodo</p>
     </section>
 
+    <section id="events" class="events-1 hidden-section">
+        <div class="card-events-1">
+            <p class="judul-count slide-up">COUNTING THE DAYS</p>
+            <div class="countdown-box slide-down">
+                <div class="countdown-item"><span id="days">00</span><br>Hari</div>
+                <div class="countdown-item"><span id="hours">00</span><br>Jam</div>
+                <div class="countdown-item"><span id="minutes">00</span><br>Menit</div>
+                <div class="countdown-item"><span id="seconds">00</span><br>Detik</div>
+            </div>
+            <button
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Rara+%26+Fajar&dates=20250420T030000Z/20250420T050000Z&details=Acara+akad+nikah+di+Masjid+Agung&location=Masjid+Agung+Sidoarjo&trp=true"
+                target="_blank" class="slide-up">
+                <i class="fas fa-calendar-alt"></i>Add To Google Calendar
+            </button>
+
+        </div>
+    </section>
+
+    <section class="events-2 hidden-section">
+        <div class="card-events-2 zoom-target" style="margin-bottom: 2vh;">
+            <h2>Akad Nikah</h2>
+        </div>
+        <div class="card-events-2 zoom-target">
+            <h2>Resepsi</h2>
+        </div>
+    </section>
+
+    <section id="maps" class="maps hidden-section">
+    </section>
+
+    <section id="album" class="album hidden-section">
+    </section>
 
 
     <div class="sticky-nav hidden-section">
@@ -593,9 +885,9 @@
             <i class="fas fa-ring"></i>
             <span>Bride</span>
         </a>
-        <a href="#calendar">
+        <a href="#events">
             <i class="fas fa-calendar-alt"></i>
-            <span>Calendar</span>
+            <span>Events</span>
         </a>
         <a href="#maps">
             <i class="fas fa-map"></i>
@@ -607,10 +899,11 @@
         </a>
     </div>
 
-    <footer >
+    <footer>
         <p>undangan website by rizqidesain.id</p>
     </footer>
 
+    <!--SKRIP BUKA UNDANGAN-->
     <script>
         function smoothScrollTo(target, duration) {
             const start = window.pageYOffset;
@@ -649,7 +942,7 @@
             // Tampilkan semua elemen tersembunyi
             document.querySelectorAll('.hidden-section').forEach(el => {
                 el.classList.remove('hidden-section');
-                el.classList.add('fade-in');
+                el.classList.add('slide-up-animate');
             });
 
             // Scroll ke #opening
@@ -657,43 +950,100 @@
             if (target) {
                 smoothScrollTo(target.offsetTop, 1500);
             }
+
+            const musicControl = document.getElementById('musicControl');
+            const musicIcon = document.getElementById('musicIcon');
+
+            musicControl.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    musicIcon.classList.remove('fa-play');
+                    musicIcon.classList.add('fa-pause');
+                } else {
+                    audio.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                }
+            });
         });
-
     </script>
-
+    <!--SKRIP SCROLL-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const zoomTargets = document.querySelectorAll('.zoom-target');
+    const animatedElements = document.querySelectorAll('.zoom-target, .slide-down, .slide-up');
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('zoom-in');
-                        observer.unobserve(entry.target); // hanya animasi sekali
-                    }
-                });
-            }, {
-                threshold: 0.4 // 40% elemen terlihat, animasi mulai
-            });
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Tambahkan animasi sesuai class yang dimiliki
+                if (entry.target.classList.contains('zoom-target')) {
+                    entry.target.classList.add('zoom-in');
+                }
 
-            zoomTargets.forEach(el => observer.observe(el));
+                if (entry.target.classList.contains('slide-down')) {
+                    entry.target.classList.add('slide-down-animate');
+                }
+
+                if (entry.target.classList.contains('slide-up')) {
+                    entry.target.classList.add('slide-up-animate');
+                }
+
+                // Menghapus class asli agar animasi bisa dimulai dari awal
+                entry.target.classList.remove('slide-up');
+                entry.target.classList.remove('slide-down');
+                entry.target.classList.remove('zoom-target');
+
+                observer.unobserve(entry.target); // Hanya animasi sekali
+            }
         });
+    }, {
+        threshold: 0.4 // Mulai animasi saat 40% elemen terlihat
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+});
+
+    </script>
+    <!--SKRIP NAMA TAMU-->
+    <script>
+        // Fungsi untuk mengambil parameter dari URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Ambil nama tamu dari parameter 'to' dan set ke elemen dengan ID 'nama-tamu'
+        const namaTamu = getParameterByName('to');
+        if (namaTamu) {
+            document.getElementById('nama-tamu').textContent = namaTamu;
+        }
+
+    </script>
+    <!--SKRIP COUNTDOWN-->
+    <script>
+        const targetDate = new Date("December 31, 2025 19:00:00").getTime(); // Ubah sesuai jadwal resepsi
+
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector(".countdown-box").innerHTML = "Acara telah selesai 🎉";
+            }
+        }, 1000);
     </script>
 
-<script>
-    // Fungsi untuk mengambil parameter dari URL
-function getParameterByName(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
-// Ambil nama tamu dari parameter 'to' dan set ke elemen dengan ID 'nama-tamu'
-const namaTamu = getParameterByName('to');
-if (namaTamu) {
-    document.getElementById('nama-tamu').textContent = namaTamu;
-}
-
-</script>
 </body>
 
 <script>
