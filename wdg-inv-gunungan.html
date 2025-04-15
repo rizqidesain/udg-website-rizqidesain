@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virda Tara & Fatikhul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: linear-gradient(to bottom right, #ead3b1, #dcbe91);
+        }
+
+        footer {
+            font-size: 0.7em;
+            color: white;
+            position: fixed;
+            align-items: center;
+            bottom: 1%;
+            left: 5%;
+            width: 90%;
+            display: flex;
+        }
+
+        .sticky-nav {
+            position: fixed;
+            bottom: 3%;
+            left: 4%;
+            right: 4%;
+            height: 6vh;
+            background: #6d0202;
+            border-radius: 2vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -0.3vh 1vh rgba(0, 0, 0, 0.26);
+            z-index: 1000;
+        }
+
+        .sticky-nav a {
+            color: white;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+            padding: 1vh 0;
+            font-size: 0.8em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            border-radius: 2vw;
+        }
+
+        .sticky-nav a:hover {
+            background: #280000;
+        }
+
+        .sticky-nav a.active {
+            background: #280000;
+            color: #ffd700;
+        }
+
+        .sticky-nav a i {
+            font-size: 1.3em;
+            margin-bottom: 0.3vh;
+        }
+
+        footer {
+            width: 100vw;
+            text-align: center;
+            left: 0;
+            align-items: center;
+        }
+
+        footer p {
+            text-align: center;
+            margin-left: 30%;
+        }
+    </style>
+    <!-- cover -->
+    <style>
+        /* ============== cover ============== */
+        .cover {
+            height: 820px;
+            padding: 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image: url('img/tyas/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .card-cover {
+            background: rgba(93, 2, 2, 0.72);
+            padding: 5vh 6vw;
+            border-radius: 70vw;
+            text-align: center;
+            justify-content: center;
+            max-width: 90vw;
+            width: 90%;
+            height: 75%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-cover p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-top: 2.5em;
+            text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.125);
+        }
+
+        .card-cover h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            margin-top: 0.3em;
+            background: linear-gradient(to right, #FFD700, #ff9747, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+
+        .card-yth {
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgba(255, 255, 255, 0.214);
+            border-radius: 4vw;
+            padding: 2vh 4vw;
+            color: #333;
+            font-size: 0.8em;
+            box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.035);
+            max-width: 100%;
+            margin-top: 5vh;
+        }
+
+        .card-yth p {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 0.8em;
+            color: #ffffff;
+            margin: 0;
+            padding: 0.1vh;
+        }
+
+        .btn-undangan {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            font-size: 0.8em;
+            color: rgb(93, 2, 2);
+            background-color: #e8a600;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 3vh;
+        }
+
+        .btn-undangan i {
+            font-size: 1.2em;
+        }
+
+        .btn-undangan:hover {
+            background-color: rgb(13, 33, 71);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .awan-1 {
+            position: absolute;
+            width: 40vw;
+            top: 12vh;
+            right: 1.5vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .awan-2 {
+            position: absolute;
+            top: 8vh;
+            width: 40vw;
+            left: 5vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes floating-vertical {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes angin-lembut {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            25% {
+                transform: translateX(5px) translateY(-2px);
+            }
+
+            50% {
+                transform: translateX(0px) translateY(1px);
+            }
+
+            75% {
+                transform: translateX(-4px) translateY(-1px);
+            }
+
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        .bunga-bawah {
+            top: 1vh;
+            margin-left: -5vh;
+            width: 90vw;
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+    </style>
+    <!--========== OPENING ==========-->
+    <style>
+        /* ============== cover ============== */
+        .opening {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image: url('img/tyas/album-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .card-opening {
+            background: rgba(36, 1, 1, 0.66);
+            text-align: center;
+            max-width: 100vw;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            /* Horizontal center */
+            align-items: center;
+            /* Vertical center */
+        }
+
+        .judul-opening {
+            margin-top: 30vh;
+        }
+
+        .judul-opening p {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        .judul-opening h2 {
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            padding: 2vh 0vh;
+        }
+    </style>
+    <!--========== BUBLE ==========-->
+    <style>
+        /* Container untuk bubble */
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Setiap bubble */
+        .bubbles span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            /* sebelumnya 0.2, sekarang lebih halus */
+            border-radius: 50%;
+            bottom: -50px;
+            animation: bubbleMove 10s linear infinite;
+        }
+
+        /* Animasi naik */
+        @keyframes bubbleMove {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+                /* sebelumnya 0.6 */
+            }
+
+            50% {
+                opacity: 0.15;
+                /* sebelumnya 0.3 */
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+
+        /* Ukuran & posisi random (pakai nth-child) */
+        .bubbles span:nth-child(1) {
+            left: 10%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 0s;
+        }
+
+        .bubbles span:nth-child(2) {
+            left: 20%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 2s;
+        }
+
+        .bubbles span:nth-child(3) {
+            left: 35%;
+            width: 10px;
+            height: 10px;
+            animation-delay: 4s;
+        }
+
+        .bubbles span:nth-child(4) {
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 1s;
+        }
+
+        .bubbles span:nth-child(5) {
+            left: 70%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 3s;
+        }
+
+        .bubbles span:nth-child(6) {
+            left: 85%;
+            width: 12px;
+            height: 12px;
+            animation-delay: 5s;
+        }
+    </style>
+    <!--========== BRIDE ==========-->
+    <style>
+        /* ============== bride ============== */
+        .bride {
+            position: relative;
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bride::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/tyas/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+
+        .card-bride {
+            text-align: center;
+            max-width: 100vw;
+            width: 40%;
+            height: 27%;
+            border-radius: 100vh 100vh 20vh 20vh;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-image: url('img/tyas/album-3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* Glass effect */
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Efek kilau animasi */
+        .card-bride::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.6) 50%,
+                    rgba(255, 255, 255, 0.2) 100%);
+            transform: rotate(25deg);
+            animation: shine 5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(25deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(25deg);
+            }
+        }
+
+        .bride-salam {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 0.9em;
+            padding: 0 5vh;
+            margin-top: -5vh;
+            margin-bottom: 3vh;
+            line-height: 1.6;
+            color: #280000;
+        }
+
+
+        .bride-salam br {
+            margin-bottom: 2vh;
+        }
+
+        .bride-pria {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.7em;
+            margin-top: 0.5em;
+            background: linear-gradient(to right, #e74d00, #280000, #e74d00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bride-wanita {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.7em;
+            margin-top: 0.3em;
+            background: linear-gradient(to right, #e74d00, #280000, #e74d00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bride-family {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            color: #280000;
+            font-style: italic;
+            padding: 0 5vh;
+            /* 0 atas-bawah, 5% kanan-kiri */
+            margin-top: -0.2vh;
+            margin-bottom: 2vh;
+
+        }
+    </style>
+    <!--========== EVENT 1 COUNTDOWN ==========-->
+    <style>
+        /* ============== COUNTDOWN ============== */
+        .events-1 {
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+
+            background-image: url('img/tyas/album-5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .card-events-1 {
+            background: rgba(97, 102, 111, 0.74);
+            text-align: center;
+            max-width: 100vw;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            /* Horizontal center */
+            align-items: center;
+            /* Vertical center */
+        }
+
+        .card-events-1 button {
+            font-family: 'Amiri', serif;
+            font-size: 0.8em;
+            margin-top: 45vh;
+            border-radius: 5vh;
+            background: linear-gradient(to right, #d7b702, #ff9747, #d7b702);
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            color: #ffffff;
+            position: absolute;
+            padding: 3px 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card-events-1 i {
+            margin-right: 5px;
+        }
+
+
+        .judul-count {
+            font-family: 'Amiri', serif;
+            font-weight: bold;
+            font-size: 1em;
+            color: #fff;
+            padding: 10px 15px;
+            position: absolute;
+            margin-bottom: -8vh;
+            z-index: 1;
+        }
+
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+            gap: 15px;
+            margin-top: 25vh;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .countdown-item {
+            padding: 10px 15px;
+            border-radius: 1vh;
+            min-width: 60px;
+            font-size: 0.8em;
+            color: #fff;
+        }
+
+        .countdown-item span {
+            font-size: 2.5em;
+            font-family: 'Aref Ruqaa', serif;
+            /* Ukuran angka */
+            display: block;
+            margin-bottom: 4px;
+            /* Jarak ke tulisan Hari/Jam */
+        }
+
+        .countdown-item small {
+            display: block;
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 1em;
+            /* Ukuran teks Hari/Jam */
+            margin-top: -5px;
+            /* Jarak ke atas (ke angka) */
+        }
+    </style>
+    <!--========== EVENTS 2 ==========-->
+    <style>
+        /* ============== AKAD RESEPSI ============== */
+        .events-2 {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .events-wrap {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 30px 0;
+            gap: 20px;
+        }
+
+        .card-events-acara {
+            position: relative;
+            text-align: center;
+            max-width: 100vw;
+            width: 85%;
+            height: 700px;
+            border-radius: 30vh;
+            border: 3px solid rgb(223, 160, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            overflow: hidden;
+            /* penting untuk membatasi efek ke dalam card */
+            z-index: 1;
+        }
+
+        /* Layer background dengan opacity */
+        .card-events-acara.akad::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('img/tyas/album-6.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            /* ubah sesuai keinginan */
+            z-index: -1;
+        }
+
+        .card-events-acara.resepsi::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('img/tyas/album-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            /* ubah sesuai keinginan */
+            z-index: -1;
+        }
+
+        .background-events {
+            background: #280000;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.5;
+            z-index: 2;
+        }
+
+        .cincin-gold {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            -webkit-mask: url('img/cincin.png') no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url('img/cincin.png') no-repeat center;
+            mask-size: contain;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .cheers-gold {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            -webkit-mask: url('img/cheers.png') no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url('img/cheers.png') no-repeat center;
+            mask-size: contain;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .card-events-acara h2 {
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            /* Bold */
+            font-size: 2em;
+            color: #eab41e;
+            margin-top: 1vh;
+            z-index: 2;
+        }
+
+        .card-events-acara p {
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            /* Bold */
+            font-size: 0.8em;
+            color: #ffffff;
+            margin-top: 2vh;
+            padding: 1vh 12vw;
+            z-index: 2;
+        }
+
+
+        .hari-akad {
+            font-family: 'Great Vibes', cursive !important;
+            font-size: 2em !important;
+            color: #ffffff !important;
+            margin-top: 1em !important;
+            text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.125) !important;
+        }
+
+        .card-events-acara i {
+            font-size: 2em;
+            color: #ffffff;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .btn-gmaps {
+            padding: 6px 12px;
+            background: #c5940c;
+            /* Background emas */
+            color: white;
+            font-weight: bold;
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 0.7em !important;
+            text-decoration: none;
+            border-radius: 50px;
+            z-index: 2;
+            display: inline-flex;
+            /* Gunakan inline-flex agar bisa kontrol vertikal alignment */
+            align-items: center;
+            /* Menjaga teks tetap berada di tengah secara vertikal */
+            justify-content: center;
+            /* Menjaga teks tetap berada di tengah secara horizontal */
+        }
+
+        .btn-gmaps i {
+            margin-right: 8px !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bunga-events {
+            position: absolute;
+            transform: translateX(-50%);
+            margin-top: 660px;
+            width: 90vw;
+            z-index: 3;
+        }
+
+        .gunungan-kiri {
+            position: absolute;
+            animation: intip-gunungan 2.5s ease-out forwards;
+            animation-delay: 1s;
+            width: 30vw;
+            left: 1vh;
+            margin-top: 300px;
+            z-index: 3;
+            transform-origin: left center;
+        }
+
+        .gunungan-kanan {
+            position: absolute;
+            animation: intip-kanan 2.5s ease-out forwards;
+            animation-delay: 1s;
+            width: 30vw;
+            right: 1vh;
+            margin-top: 300px;
+            z-index: 3;
+            transform-origin: right center;
+        }
+    </style>
+    <!--========== ALBUM ==========-->
+    <style>
+        .album {
+            position: relative;
+            height: auto;
+            padding: 5vh 5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .album::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('img/tyas/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .album h2 {
+            font-family: 'Aref Ruqaa', serif;
+            margin-bottom: 5vh;
+        }
+
+        .grid-album {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* hanya 2 kolom */
+            gap: 20px;
+            width: 100%;
+            max-width: 700px;
+            z-index: 2;
+        }
+
+
+        .foto-album {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #previewImage {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            position: relative;
+        }
+    </style>
+    <!--========== HARUS DIBAWAH ==========-->
+    <style>
+        .hidden-section {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Awalnya disembunyikan */
+        .zoom-target {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        /* Aktifkan animasi zoom saat masuk ke layar */
+        .zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+        /* Slide Down */
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-down-animate {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        /* Slide Up */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-up-animate {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        /* Zoom */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+
+        #audio {
+            display: none;
+        }
+
+        .music-btn {
+            position: fixed;
+            top: 40px;
+            right: 10px;
+            z-index: 9999;
+            background-color: rgba(255, 213, 0, 0.837);
+            border: none;
+            border-radius: 50%;
+            padding: 9px 12px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .music-btn i {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .scroll-btn {
+            position: fixed;
+            top: 85px;
+            right: 10px;
+            z-index: 9999;
+            background-color: rgba(96, 96, 96, 0.837);
+            border: none;
+            border-radius: 50%;
+            padding: 9px 10px;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .scroll-btn i {
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="musicControl" class="music-btn hidden-section zoom-target">
+        <i id="musicIcon" class="fas fa-pause"></i>
+    </button>
+    <button id="scrollDown" class="scroll-btn hidden-section zoom-target">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+
+
+    <section id="cover" class="cover">
+        <img src="img/tyas/awan-1.png" alt="Bunga" class="awan-1 slide-down">
+        <img src="img/tyas/awan-2.png" alt="Bunga" class="awan-2 slide-down">
+        <div class="card-cover">
+            <p class="zoom-target">You are invited to our wedding</p>
+            <h2 class="zoom-target">Virda Tara & Fatikhul Izzi</h2>
+            <p class="zoom-target" style="font-family: 'Aref Ruqaa', serif; font-size: 0.8em; margin-top: 5px;">20-21
+                April 2025</p>
+            <div class="card-yth">
+                <p>Kepada Yth:</p>
+                <p>Bapak/Ibu/Saudara/i</p>
+                <p id="nama-tamu" style="font-size: 1.1em; font-weight: bold;">TAMU</p>
+                <p>ditempat</p>
+            </div>
+            <a href="#" class="btn-undangan zoom-target" id="openInvitationBtn">
+                <i class="fas fa-feather"></i> Buka Undangan
+            </a>
+            <img src="img//tyas/bunga-bawah.png" alt="Bunga Bawah" class="bunga-bawah  zoom-target">
+        </div>
+    </section>
+
+    <section id="opening" class="opening hidden-section">
+        <div class="card-opening">
+            <div class="bubbles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="judul-opening zoom-target">
+                <p style="font-size: 2em;">The Wedding Of</p>
+                <h2>Virda & Fatikhul</h2>
+                <p style="font-size: 1.2em;">20-21 April 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bride" class="bride hidden-section">
+        <div class="bride-salam zoom-target">
+            Assalamualaikum, Wr.Wb <br>
+            Dengan memohon Rahmat dan Ridho Allah SWT.
+            Kami memohon Do'a dan Restu Bapak / Ibu / Saudara / i
+            untuk melangsungkan acara pernikahan kami:
+        </div>
+        <div class="card-bride zoom-target"></div>
+        <div class="bride-pria zoom-target">Virda Tara Ningtyas</div>
+        <p class="bride-family slide-up">putri dari Bapak Muin & Ibu Fatonah</p>
+        <div class="bride-wanita zoom-target">Fatikhul Izzi</div>
+        <p class="bride-family slide-up">putra dari Bapak Achiyat & Ibu Fatimah</p>
+    </section>
+
+    <section id="events" class="events-1 hidden-section">
+        <div class="card-events-1">
+            <p class="judul-count slide-up">COUNTING THE DAYS</p>
+            <div class="countdown-box slide-down">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <small>Hari</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <small>Jam</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <small>Menit</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <small>Detik</small>
+                </div>
+            </div>
+
+            <button
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Rara+%26+Fajar&dates=20250420T030000Z/20250420T050000Z&details=Acara+akad+nikah+di+Masjid+Agung&location=Masjid+Agung+Sidoarjo&trp=true"
+                target="_blank" class="slide-up">
+                <i class="fas fa-calendar-alt"></i>Add To Google Calendar
+            </button>
+
+        </div>
+    </section>
+
+    <section class="events-2 hidden-section">
+        <div class="events-wrap">
+            <div class="card-events-acara akad" style="margin-bottom: 2vh;">
+                <div class="background-events"></div>
+                <div class="cincin-gold zoom-target"></div>
+                <h2 class="slide-up">Akad Nikah</h2>
+                <p class="slide-up">InsyaAllah akan dilaksanakan pada:</p>
+                <p class="hari-akad slide-up">Senin</p>
+                <h2 class="slide-up" style="font-size: 1em;">21 April 2025</h2>
+                <p class="slide-up">08.00 WIB</p>
+                <i class="fas fa-map-marker-alt slide-up"></i>
+                <p class="slide-up">Bertempat di : <br>
+                    Kediamana Mempelai Wanita. Jl. Raya Mantup - Tikung (Depan Koramil)
+                </p>
+                <a href="https://maps.app.goo.gl/v5rHZ7TBgRik5kb86" target="_blank" class="btn-gmaps slide-up">
+                    <i class="fas fa-map-marked-alt"></i> Lihat di Google Maps
+                </a>
+
+            </div>
+            <img src="img/tyas/bunga-bawah.png" alt="Bunga" class="bunga-events zoom-target">
+            <div class="card-events-acara resepsi" style="margin-bottom: 2vh;">
+                <div class="background-events"></div>
+                <div class="cheers-gold zoom-target"></div>
+                <h2 class="slide-up">Resepsi</h2>
+                <p class="slide-up">InsyaAllah akan dilaksanakan pada:</p>
+                <p class="hari-akad slide-up">Selasa</p>
+                <h2 class="slide-up" style="font-size: 1em;">22 April 2025</h2>
+                <p class="slide-up">Pukul 13.00 WIB - Selesai</p>
+                <i class="fas fa-map-marker-alt slide-up"></i>
+                <p class="slide-up">Bertempat di : <br>
+                    Kediamana Mempelai Wanita. Jl. Raya Mantup - Tikung (Depan Koramil)
+                </p>
+                <a href="https://maps.app.goo.gl/v5rHZ7TBgRik5kb86" target="_blank" class="btn-gmaps slide-up">
+                    <i class="fas fa-map-marked-alt"></i> Lihat di Google Maps
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gift" class="gift hidden-section">
+    </section>
+
+    <section id="album" class="album hidden-section">
+        <h2 class="judul-section">Galeri Kami</h2>
+        <div class="grid-album">
+            <img src="img/tyas/album-1.jpg" class="foto-album zoom-target" alt="Album 1">
+            <img src="img/tyas/album-2.jpg" class="foto-album zoom-target" alt="Album 2">
+            <img src="img/tyas/album-3.jpg" class="foto-album zoom-target" alt="Album 3">
+            <img src="img/tyas/album-4.jpg" class="foto-album zoom-target" alt="Album 4">
+            <img src="img/tyas/album-5.jpg" class="foto-album zoom-target" alt="Album 5">
+            <img src="img/tyas/album-6.jpg" class="foto-album zoom-target" alt="Album 6">
+        </div>
+    </section>
+
+
+
+
+    <div class="sticky-nav hidden-section">
+        <a href="#opening">
+            <i class="fas fa-home"></i>
+            <span>opening</span>
+        </a>
+        <a href="#bride">
+            <i class="fas fa-ring"></i>
+            <span>Bride</span>
+        </a>
+        <a href="#events">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Events</span>
+        </a>
+        <a href="#gift">
+            <i class="fas fa-gift"></i>
+            <span>Gift</span>
+        </a>
+        <a href="#album">
+            <i class="fas fa-images"></i>
+            <span>Album</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>undangan website by rizqidesain.id</p>
+    </footer>
+
+    <!--SKRIP BUKA UNDANGAN-->
+    <script>
+        function smoothScrollTo(target, duration) {
+            const start = window.pageYOffset;
+            const distance = target - start;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, start, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        const openBtn = document.getElementById('openInvitationBtn');
+        const audio = new Audio('img/tyas/pernikahanku.mp3'); // Memuat musik
+        let isAudioPlayed = false; // Untuk memeriksa apakah musik sudah diputar
+        openBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Cek apakah musik sudah diputar
+            if (!isAudioPlayed) {
+                // Memutar musik jika belum diputar
+                audio.play();
+                isAudioPlayed = true; // Tandai musik sudah diputar
+            }
+            // Tampilkan semua elemen tersembunyi
+            document.querySelectorAll('.hidden-section').forEach(el => {
+                el.classList.remove('hidden-section');
+                el.classList.add('slide-up-animate');
+            });
+
+            // Scroll ke #opening
+            const target = document.querySelector('#opening');
+            if (target) {
+                smoothScrollTo(target.offsetTop, 1500);
+            }
+
+            const musicControl = document.getElementById('musicControl');
+            const musicIcon = document.getElementById('musicIcon');
+
+            musicControl.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    musicIcon.classList.remove('fa-play');
+                    musicIcon.classList.add('fa-pause');
+                } else {
+                    audio.pause();
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                }
+            });
+        });
+    </script>
+    <!-- Lightbox Container -->
+    <div id="previewOverlay"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+        <img id="previewImage" src=""
+            style="max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.7);">
+        <!-- Tambah tombol navigasi -->
+        <button id="prevBtn"
+            style="position:absolute; left:3%; top:50%; transform:translateY(-50%); font-size:3rem; color:white; background:none; border:none; cursor:pointer; z-index:10000;">&#10094;</button>
+        <button id="nextBtn"
+            style="position:absolute; right:3%; top:50%; transform:translateY(-50%); font-size:3rem; color:white; background:none; border:none; cursor:pointer; z-index:10000;">&#10095;</button>
+
+    </div>
+    <script>
+        const fotos = Array.from(document.querySelectorAll('.foto-album'));
+        const overlay = document.getElementById('previewOverlay');
+        const preview = document.getElementById('previewImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        function showImage(index) {
+            if (index < 0) index = fotos.length - 1;
+            if (index >= fotos.length) index = 0;
+
+            // Animasi keluar
+            preview.style.opacity = 0;
+            preview.style.transform = 'translateX(100px)';
+
+            setTimeout(() => {
+                currentIndex = index;
+                preview.src = fotos[currentIndex].src;
+
+                // Reset transform lalu animasi masuk
+                preview.style.transform = 'translateX(-100px)';
+                preview.style.opacity = 0;
+
+                setTimeout(() => {
+                    preview.style.transform = 'translateX(0)';
+                    preview.style.opacity = 1;
+                }, 50);
+            }, 200);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                showImage(currentIndex + 1);
+            }, 4000); // Tiap 4 detik
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        fotos.forEach((foto, index) => {
+            foto.addEventListener('click', () => {
+                showImage(index);
+                overlay.style.display = 'flex';
+                startAutoSlide();
+            });
+        });
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target === preview) {
+                overlay.style.display = 'none';
+                stopAutoSlide();
+            }
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+    </script>
+    <!--SKRIP SCROLL-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.zoom-target, .slide-down, .slide-up');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Tambahkan animasi sesuai class yang dimiliki
+                        if (entry.target.classList.contains('zoom-target')) {
+                            entry.target.classList.add('zoom-in');
+                        }
+
+                        if (entry.target.classList.contains('slide-down')) {
+                            entry.target.classList.add('slide-down-animate');
+                        }
+
+                        if (entry.target.classList.contains('slide-up')) {
+                            entry.target.classList.add('slide-up-animate');
+                        }
+
+                        // Menghapus class asli agar animasi bisa dimulai dari awal
+                        entry.target.classList.remove('slide-up');
+                        entry.target.classList.remove('slide-down');
+                        entry.target.classList.remove('zoom-target');
+
+                        observer.unobserve(entry.target); // Hanya animasi sekali
+                    }
+                });
+            }, {
+                threshold: 0.4 // Mulai animasi saat 40% elemen terlihat
+            });
+
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Tambahan khusus untuk awan
+            const awan1 = document.querySelector('.awan-1');
+            const awan2 = document.querySelector('.awan-2');
+            const bungabawah = document.querySelector('.bunga-bawah');
+            const bungaevents = document.querySelector('.bunga-events');
+
+            if (awan1) {
+                awan1.addEventListener('animationend', function () {
+                    awan1.style.animation = 'floating-vertical 6s ease-in-out infinite';
+                });
+            }
+
+            if (awan2) {
+                awan2.addEventListener('animationend', function () {
+                    awan2.style.animation = 'floating-vertical 8s ease-in-out infinite';
+                });
+            }
+            if (bungabawah) {
+                bungabawah.addEventListener('animationend', function () {
+                    bungabawah.style.animation = 'angin-lembut 6s ease-in-out infinite';
+                });
+            }
+            if (bungaevents) {
+                bungaevents.addEventListener('animationend', function () {
+                    bungaevents.style.animation = 'angin-lembut 6s ease-in-out infinite';
+                });
+            }
+        });
+    </script>
+    <!--SKRIP NAMA TAMU-->
+    <script>
+        // Fungsi untuk mengambil parameter dari URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Ambil nama tamu dari parameter 'to' dan set ke elemen dengan ID 'nama-tamu'
+        const namaTamu = getParameterByName('to');
+        if (namaTamu) {
+            document.getElementById('nama-tamu').textContent = namaTamu;
+        }
+
+    </script>
+    <!--SKRIP COUNTDOWN-->
+    <script>
+        const targetDate = new Date("April 21, 2025 08:00:00").getTime(); // Ubah sesuai jadwal resepsi
+
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector(".countdown-box").innerHTML = "Acara telah selesai 🎉";
+            }
+        }, 1000);
+    </script>
+
+<script>
+    let scrollInterval;
+    let isScrolling = false;
+
+    const scrollBtn = document.getElementById("scrollDown");
+
+    function startAutoScroll() {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        scrollInterval = setInterval(() => {
+            const distanceToBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+
+            if (distanceToBottom <= 0) {
+                stopAutoScroll();
+                return;
+            }
+
+            window.scrollBy({ top: 5, behavior: 'smooth' });
+        }, 20);
+    }
+
+    function stopAutoScroll() {
+        isScrolling = false;
+        clearInterval(scrollInterval);
+    }
+
+    scrollBtn.addEventListener("click", () => {
+        if (isScrolling) {
+            stopAutoScroll();
+        } else {
+            startAutoScroll();
+        }
+    });
+
+    // Hentikan scroll otomatis jika user scroll manual
+    window.addEventListener("wheel", stopAutoScroll, { passive: true });
+    window.addEventListener("touchmove", stopAutoScroll, { passive: true });
+</script>
+
+
+
+</body>
+
+<script>
+    const navLinks = document.querySelectorAll('.sticky-nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Mencegah loncatan langsung
+
+            // Hapus class active dari semua link
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+
+            // Ambil target section
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Scroll halus manual dengan durasi lebih lama (misalnya 1000ms)
+            smoothScrollTo(targetElement.offsetTop, 1000);
+        });
+    });
+
+    function smoothScrollTo(target, duration) {
+        const start = window.pageYOffset;
+        const distance = target - start;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutQuad(timeElapsed, start, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+</script>
+
+
+
+</html>
