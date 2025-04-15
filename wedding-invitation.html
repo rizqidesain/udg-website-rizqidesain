@@ -107,7 +107,7 @@
     <style>
         /* ============== cover ============== */
         .cover {
-            height: 100vh;
+            height: 820px;
             padding: 3%;
             display: flex;
             flex-direction: column;
@@ -553,6 +553,7 @@
             border: none;
             cursor: pointer;
         }
+
         .card-events-1 i {
             margin-right: 5px;
         }
@@ -596,7 +597,7 @@
     <style>
         /* ============== AKAD RESEPSI ============== */
         .events-2 {
-            height: 820px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -605,17 +606,29 @@
             color: white;
         }
 
-        .card-events-2 {
+        .events-wrap {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 30px 0;
+            gap: 20px;
+        }
+
+        .card-events-acara {
             position: relative;
             text-align: center;
             max-width: 100vw;
             width: 85%;
-            height: 30%;
-            border-radius: 3vh;
-            top: 10vh;
-
+            height: 700px;
+            border-radius: 30vh;
+            border: 3px solid rgb(223, 160, 0);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: start;
             align-items: center;
 
             overflow: hidden;
@@ -624,7 +637,7 @@
         }
 
         /* Layer background dengan opacity */
-        .card-events-2::before {
+        .card-events-acara::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -632,31 +645,127 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.9;
+            opacity: 0.5;
             /* ubah sesuai keinginan */
             z-index: -1;
         }
 
-        .card-events-2::before {
-            content: '';
+        .background-events {
+            background: #2c4a68;
+            width: 100%;
+            height: 100%;
             position: absolute;
-            inset: 0;
-            background-image: url('img/background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.9;
-            /* ubah sesuai keinginan */
-            z-index: -1;
+            opacity: 0.4;
+            z-index: 2;
         }
 
-        .card-events-2 h2 {
+        .cincin-gold {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            -webkit-mask: url('img/cincin.png') no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url('img/cincin.png') no-repeat center;
+            mask-size: contain;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .cheers-gold {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(45deg, #d4af37, #ffd700, #d4af37);
+            -webkit-mask: url('img/cheers.png') no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url('img/cheers.png') no-repeat center;
+            mask-size: contain;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .card-events-acara h2 {
             font-family: 'Aref Ruqaa', serif;
             font-weight: 700;
             /* Bold */
             font-size: 2em;
-            color: #fff;
-            margin-top: -20vh;
+            color: #eab41e;
+            margin-top: 1vh;
+            z-index: 2;
+        }
+
+        .card-events-acara p {
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            /* Bold */
+            font-size: 0.8em;
+            color: #ffffff;
+            margin-top: 2vh;
+            padding: 1vh 12vw;
+            z-index: 2;
+        }
+
+
+        .hari-akad {
+            font-family: 'Great Vibes', cursive !important;
+            font-size: 2em !important;
+            color: #ffffff !important;
+            margin-top: 1em !important;
+            text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.125) !important;
+        }
+
+        .card-events-acara i {
+            font-size: 2em;
+            color: #ffffff;
+            margin-top: 5vh;
+            z-index: 2;
+        }
+
+        .btn-gmaps {
+            padding: 6px 12px;
+            background: #c5940c;
+            /* Background emas */
+            color: white;
+            font-weight: bold;
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 0.7em !important;
+            text-decoration: none;
+            border-radius: 50px;
+            z-index: 2;
+            display: inline-flex;
+            /* Gunakan inline-flex agar bisa kontrol vertikal alignment */
+            align-items: center;
+            /* Menjaga teks tetap berada di tengah secara vertikal */
+            justify-content: center;
+            /* Menjaga teks tetap berada di tengah secara horizontal */
+        }
+
+        .btn-gmaps i {
+            margin-right: 8px !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bunga-events {
+            position: absolute;
+            transform: translateX(-50%);
+            margin-top: 660px;
+            width: 70vw;
+            animation: goyangEvents 5s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        @keyframes goyangEvents {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            50% {
+                transform: translateX(-50%) rotate(1.5deg);
+            }
+
+            100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
         }
     </style>
     <!--========== HARUS DIBAWAH ==========-->
@@ -860,11 +969,44 @@
     </section>
 
     <section class="events-2 hidden-section">
-        <div class="card-events-2 zoom-target" style="margin-bottom: 2vh;">
-            <h2>Akad Nikah</h2>
-        </div>
-        <div class="card-events-2 zoom-target">
-            <h2>Resepsi</h2>
+        <div class="events-wrap">
+            <div class="card-events-acara" style="margin-bottom: 2vh;">
+                <div class="background-events"></div>
+                <div class="cincin-gold zoom-target"></div>
+                <h2 class="slide-up">Resepsi</h2>
+                <p class="slide-up">InsyaAllah akan dilaksanakan pada:</p>
+                <p class="hari-akad slide-up">Sabtu</p>
+                <h2 class="slide-up" style="font-size: 1em;">Jum'at 31 Februari 2060</h2>
+                <p class="slide-up">Siang - Malam</p>
+                <i class="fas fa-map-marker-alt slide-up"></i>
+                <p class="slide-up">Bertempat di : <br>
+                    Dusun Cinta Desa Asmara Rt.001 Rw.009
+                    Kec. Akad Kab. Resepsi
+                </p>
+                <a href="https://maps.google.com?q=lokasi+akad" target="_blank" class="btn-gmaps slide-up">
+                    <i class="fas fa-map-marked-alt"></i> Lihat di Google Maps
+                </a>
+
+            </div>
+            <img src="img/bunga1.png" alt="Bunga" class="bunga-events zoom-target">
+            <div class="card-events-acara" style="margin-bottom: 2vh;">
+                <div class="background-events"></div>
+                <div class="cheers-gold zoom-target"></div>
+                <h2 class="slide-up">Akad Nikah</h2>
+                <p class="slide-up">InsyaAllah akan dilaksanakan pada:</p>
+                <p class="hari-akad slide-up">Jum'at</p>
+                <h2 class="slide-up" style="font-size: 1em;">Jum'at 31 Februari 2060</h2>
+                <p class="slide-up">Pukul 08.00 WIB - Selesai</p>
+                <i class="fas fa-map-marker-alt slide-up"></i>
+                <p class="slide-up">Bertempat di : <br>
+                    Dusun Cinta Desa Asmara Rt.001 Rw.009
+                    Kec. Akad Kab. Resepsi
+                </p>
+                <a href="https://maps.google.com?q=lokasi+akad" target="_blank" class="btn-gmaps slide-up">
+                    <i class="fas fa-map-marked-alt"></i> Lihat di Google Maps
+                </a>
+
+            </div>
         </div>
     </section>
 
@@ -889,7 +1031,7 @@
             <span>Events</span>
         </a>
         <a href="#maps">
-            <i class="fas fa-map"></i>
+            <i class="fas fa-map-marked-alt"></i>
             <span>Maps</span>
         </a>
         <a href="#album">
@@ -969,38 +1111,38 @@
     <!--SKRIP SCROLL-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    const animatedElements = document.querySelectorAll('.zoom-target, .slide-down, .slide-up');
+            const animatedElements = document.querySelectorAll('.zoom-target, .slide-down, .slide-up');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Tambahkan animasi sesuai class yang dimiliki
-                if (entry.target.classList.contains('zoom-target')) {
-                    entry.target.classList.add('zoom-in');
-                }
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Tambahkan animasi sesuai class yang dimiliki
+                        if (entry.target.classList.contains('zoom-target')) {
+                            entry.target.classList.add('zoom-in');
+                        }
 
-                if (entry.target.classList.contains('slide-down')) {
-                    entry.target.classList.add('slide-down-animate');
-                }
+                        if (entry.target.classList.contains('slide-down')) {
+                            entry.target.classList.add('slide-down-animate');
+                        }
 
-                if (entry.target.classList.contains('slide-up')) {
-                    entry.target.classList.add('slide-up-animate');
-                }
+                        if (entry.target.classList.contains('slide-up')) {
+                            entry.target.classList.add('slide-up-animate');
+                        }
 
-                // Menghapus class asli agar animasi bisa dimulai dari awal
-                entry.target.classList.remove('slide-up');
-                entry.target.classList.remove('slide-down');
-                entry.target.classList.remove('zoom-target');
+                        // Menghapus class asli agar animasi bisa dimulai dari awal
+                        entry.target.classList.remove('slide-up');
+                        entry.target.classList.remove('slide-down');
+                        entry.target.classList.remove('zoom-target');
 
-                observer.unobserve(entry.target); // Hanya animasi sekali
-            }
+                        observer.unobserve(entry.target); // Hanya animasi sekali
+                    }
+                });
+            }, {
+                threshold: 0.4 // Mulai animasi saat 40% elemen terlihat
+            });
+
+            animatedElements.forEach(el => observer.observe(el));
         });
-    }, {
-        threshold: 0.4 // Mulai animasi saat 40% elemen terlihat
-    });
-
-    animatedElements.forEach(el => observer.observe(el));
-});
 
     </script>
     <!--SKRIP NAMA TAMU-->
