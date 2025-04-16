@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virda Tara & Fatikhul</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: linear-gradient(to bottom right, #ead3b1, #dcbe91);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 7vh;
+            background: #053a69;
+            border-radius: 0 0 2vw 2vw;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+            z-index: 1001;
+            box-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-img {
+            height: 30px;
+            width: auto;
+            margin-right: 8px;
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar-logout a {
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .sticky-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6vh;
+            background: #002f58;
+            border-radius: 2vw 2vw 0 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -0.3vh 1vh rgba(0, 0, 0, 0.26);
+            z-index: 1000;
+        }
+
+        .sticky-nav a {
+            color: white;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+            padding: 1vh 0;
+            font-size: 0.8em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            border-radius: 2vw;
+        }
+
+        .sticky-nav a i {
+            font-size: 1.3em;
+            margin-bottom: 0.3vh;
+        }
+
+        .sticky-nav a.active i {
+            background-color: #ffffff;
+            /* warna bulatan */
+            color: #002f58;
+            /* warna ikon saat aktif */
+            border-radius: 50%;
+            padding: 0.5em;
+            font-size: 1.5em;
+            box-shadow: 0 0 0.3em rgba(1, 29, 67, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-nav a.active span {
+            margin-bottom: 4vh;
+        }
+    </style>
+    <!-- cover -->
+    <style>
+        /* ============== cover ============== */
+        .cover {
+            height: 820px;
+            padding: 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            text-align: center;
+            background: #d6e9f9;
+        }
+
+        .halaman {
+            margin-top: 8vh;
+            color: #3c464e;
+            font-size: 2vh;
+            margin-left: 2vh;
+        }
+
+        .form-undangan {
+            background: #ffffff;
+            padding: 1.5em;
+            border-radius: 1em;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 2em auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .form-undangan input,
+        .form-undangan textarea {
+            padding: 0.6em 1em;
+            border: 1px solid #ccc;
+            border-radius: 0.6em;
+            font-size: 1em;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-undangan input:focus,
+        .form-undangan textarea:focus {
+            border-color: #0077cc;
+            box-shadow: 0 0 0.3em rgba(0, 119, 204, 0.4);
+        }
+
+        .form-undangan textarea {
+            resize: vertical;
+            min-height: 200px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 0.5em;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.6em 2em;
+            font-size: 0.9em;
+            border: none;
+            border-radius: 0.6em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn.reset {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn.kirim {
+            background-color: #25d366;
+            /* WhatsApp green */
+            color: white;
+        }
+
+        .btn.salin {
+            background-color: #007bff;
+            color: white;
+        }
+
+
+        .btn i {
+            font-size: 1.2em;
+            /* size icon */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="assets/logo.png" alt="Logo" class="logo-img">
+        </div>
+        <div class="navbar-logout">
+            <a href="#" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="cover">
+        <span class="halaman">Halo Virda Tara & Fatikhul</span>
+        <form class="form-undangan" action="#" onsubmit="return false;">
+            <input type="text" id="nama-tamu" placeholder="Nama Tamu">
+            <input type="text" id="alamat" placeholder="Alamat">
+            <textarea name="teks" id="teks" placeholder="Isi Pesan..."></textarea>
+            <div class="form-buttons">
+                <button type="reset" class="btn reset">
+                    <i class="fas fa-redo-alt"></i> Reset
+                </button>
+                <button type="button" class="btn kirim" onclick="kirimWa()">
+                    <i class="fab fa-whatsapp"></i> Kirim WA
+                </button>
+                <button type="button" class="btn salin">
+                    <i class="fas fa-copy"></i> Salin
+                </button>
+            </div>
+        </form>
+        
+        
+        <script>
+            function kirimWa() {
+                const nama = document.getElementById('nama-tamu').value.trim();
+                const alamat = document.getElementById('alamat').value.trim();
+                const link = `https://rizqidesain.github.io/udg-website-rizqidesain/Tyas&Fatikhul.html?to=${encodeURIComponent(nama)}&di=${encodeURIComponent(alamat)}`;
+        
+const pesan = 
+`Assalamu’alaikum Warahmatullahi Wabarakatuh 🙏
+
+Dengan segala kerendahan hati dan ungkapan syukur atas rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i tercinta:
+
+👤 ${nama}
+🏠 ${alamat}
+
+Untuk menghadiri acara pernikahan kami:
+
+💑 Virda Tara Ningtyas & Fatikhul Izzam
+
+Yang insyaAllah akan dilaksanakan pada:
+📆 Ahad - Senin, 20–21 April 2025
+📍 Jl. Raya Mantup Tikung (Depan Koramil Tikung)
+
+Kami sangat berharap kehadiran dan doa restu dari Bapak/Ibu/Saudara/i dapat memberikan keberkahan dalam langkah awal kami membangun rumah tangga.
+
+🔗 Berikut link undangan digital kami:
+${link}
+
+Silakan klik link di atas untuk info lengkap 📲
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa terbaik.
+
+Wassalamu’alaikum Warahmatullahi Wabarakatuh 🙏`;
+
+        
+                const waLink = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
+                window.open(waLink, '_blank');
+            }
+        </script>
+        
+        
+    </div>
+
+    <div class="sticky-nav">
+        <a href="#">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="#" class="active">
+            <i class="fas fa-users"></i>
+            <span>Visitor</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-eye"></i>
+            <span>Preview</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-cogs"></i>
+            <span>Option</span>
+        </a>
+    </div>
+
+
+
+
+
+
+</body>
+
+
+</html>
