@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Virda Tara & Fatikhul</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
@@ -567,7 +568,7 @@
             /* Vertical center */
         }
 
-        .card-events-1 button {
+        .card-events-1 a {
             font-family: 'Amiri', serif;
             font-size: 0.8em;
             margin-top: 45vh;
@@ -886,7 +887,7 @@
             position: relative;
         }
     </style>
-
+    <!--========== GIFT ==========-->
     <style>
         /* ============== bride ============== */
         .gift {
@@ -976,7 +977,7 @@
             background-position: center;
             background-repeat: no-repeat;
             color: white;
-            padding: 10vh 31vw;
+            padding: 11vh 31vw;
             margin-bottom: 10px;
             border-radius: 10px;
             position: relative;
@@ -988,7 +989,7 @@
             background-position: center;
             background-repeat: no-repeat;
             color: white;
-            padding: 10vh 31vw;
+            padding: 10vh 30vw;
             margin-bottom: 10px;
             border-radius: 10px;
             position: relative;
@@ -1148,6 +1149,77 @@
             margin-bottom: 4vh;
         }
     </style>
+    <!--========== COMPANY ==========-->
+    <style>
+        /* ============== bride ============== */
+        .company {
+            position: relative;
+            min-height: 300px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            /* Konten lain tetap start */
+            align-items: center;
+            /* default ke kiri */
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .company::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/tyas/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .company p {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 1em;
+            margin-top: 5vh;
+        }
+
+        /* Tambahan untuk logo agar tetap di tengah */
+        .company .logo {
+            align-self: center;
+            max-width: 250px;
+            margin-top: 5vh;
+        }
+
+        .sosmed {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            align-self: center;
+            padding-left: 10px;
+        }
+
+        .sosmed a {
+            color: #25D366;
+            /* Default WhatsApp color, nanti Instagram bisa diatur berbeda */
+            font-size: 28px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .sosmed a:nth-child(2) {
+            color: #C13584;
+            /* Instagram color */
+        }
+
+        .sosmed a:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+    </style>
     <!--========== HARUS DIBAWAH ==========-->
     <style>
         .hidden-section {
@@ -1288,7 +1360,6 @@
             color: white;
         }
     </style>
-
 </head>
 
 <body>
@@ -1298,7 +1369,6 @@
     <button id="scrollDown" class="scroll-btn hidden-section zoom-target">
         <i class="fas fa-arrow-down"></i>
     </button>
-
 
     <section id="cover" class="cover">
         <img src="img/tyas/awan-1.png" alt="Bunga" class="awan-1 slide-down">
@@ -1376,12 +1446,10 @@
                 </div>
             </div>
 
-            <button
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Rara+%26+Fajar&dates=20250420T030000Z/20250420T050000Z&details=Acara+akad+nikah+di+Masjid+Agung&location=Masjid+Agung+Sidoarjo&trp=true"
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Virda+%26+Fatikhul&dates=20250421T080000/20250422T110000&details=Assalamualaikum%2C+Dengan+memohon+Rahmat+dan+Ridho+Allah+SWT%2C+kami+akan+melangsungkan+pernikahan+kami+pada+21-22+April+2025+di+Tikung%2C+Lamongan.+Mohon+doa+dan+restunya.&location=Tikung%2C+Lamongan"
                 target="_blank" class="slide-up">
-                <i class="fas fa-calendar-alt"></i>Add To Google Calendar
-            </button>
-
+                <i class="fas fa-calendar-alt"></i> Add To Google Calendar
+            </a>
         </div>
     </section>
 
@@ -1481,13 +1549,12 @@
                     <input type="text" id="nominal" placeholder="Nominal Amplop">
 
                     <!-- Dropdown untuk pilihan rekening -->
-                    <select id="rekening"
-                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <select id="rekening" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
                         <option value="">Pilih Rekening</option>
                         <option value="BCA">BCA</option>
                         <option value="Dana">Dana</option>
                         <option value="Isaku">I Saku</option>
-                        <option value="Shp">Shopeepay</option>
+                        <option value="Shopeepay">Shopeepay</option>
                     </select>
 
                     <textarea id="ucapan" placeholder="Ucapan" rows="3"></textarea>
@@ -1526,6 +1593,24 @@
 
         </div>
     </section>
+
+    <section class="company hidden-section">
+        <p class=" zoom-target">Website Invitation Created By :</p>
+        <img src="assets/logo.png" alt="Company" class="logo zoom-target">
+
+        <div class="sosmed">
+            <a href="https://wa.me/6285707167531" target="_blank" class=" zoom-target">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/rizqi.mhmmd_" target="_blank" class=" zoom-target">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+
     <!--SKRIP GIFT-->
     <script>
         function toggleCard(cardId) {
@@ -1567,9 +1652,6 @@
         </a>
     </div>
 
-    <footer>
-        <p>undangan website by rizqidesain.id</p>
-    </footer>
 
     <!--SKRIP BUKA UNDANGAN-->
     <script>
