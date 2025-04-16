@@ -121,7 +121,7 @@
     <style>
         /* ============== cover ============== */
         .cover {
-            height: 820px;
+            height: 900px;
             padding: 3%;
             display: flex;
             flex-direction: column;
@@ -179,14 +179,35 @@
             flex-wrap: wrap;
         }
 
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            /* Menyebarkan tombol dengan jarak antar tombol */
+            gap: 10px;
+            /* Menambahkan jarak antar tombol */
+        }
+
         .btn {
             flex: 1;
-            padding: 0.6em 2em;
+            padding: 0.9em 2em;
             font-size: 0.9em;
             border: none;
             border-radius: 0.6em;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            /* Membuat tombol dan ikon berada dalam satu baris */
+            justify-content: center;
+            /* Menyelaraskan konten di tengah */
+            align-items: center;
+            /* Menyelaraskan konten secara vertikal */
+        }
+
+        .btn i {
+            font-size: 1.2em;
+            /* Ukuran ikon */
+            margin-right: 8px;
+            /* Memberi jarak antara ikon dan teks */
         }
 
         .btn.reset {
@@ -196,7 +217,6 @@
 
         .btn.kirim {
             background-color: #25d366;
-            /* WhatsApp green */
             color: white;
         }
 
@@ -206,9 +226,66 @@
         }
 
 
+
         .btn i {
             font-size: 1.2em;
             /* size icon */
+        }
+    </style>
+    <style>
+        /* Modal style */
+        .modal {
+            position: fixed;
+            top: -50px;
+            /* Mulai di atas layar */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f5af00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            display: none;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            /* Mulai dengan opacity 0 (tidak terlihat) */
+            transition: top 1s ease, opacity 0.5s ease;
+            /* Efek transisi untuk top dan opacity */
+        }
+
+        .modal.show {
+            display: block;
+            top: 20px;
+            /* Modal bergerak turun ke posisi ini */
+            opacity: 1;
+            /* Modal akan terlihat setelah transisi selesai */
+        }
+
+        .modal-content {
+            text-align: center;
+        }
+    </style>
+    <style>
+        .peringatan {
+            text-align: left;
+            font-size: 0.7em;
+            padding: 2vh;
+            text-align: justify;
+        }
+
+        li {
+            list-style: none;
+            /* Menghilangkan bullet default */
+            margin-bottom: 1vh;
+            /* Menambahkan jarak antar item */
+        }
+
+        li i {
+            color: #f44336;
+            /* Warna merah untuk ikon */
+            margin-right: 8px;
+            /* Memberikan jarak antara ikon dan teks */
         }
     </style>
 </head>
@@ -229,35 +306,14 @@
         <span class="halaman">Halo Virda Tara & Fatikhul</span>
         <form class="form-undangan" action="#" onsubmit="return false;">
             <input type="text" id="nama-tamu" placeholder="Nama Tamu">
-            <input type="text" id="alamat" placeholder="Alamat">
-            <textarea name="teks" id="teks" placeholder="Isi Pesan..."></textarea>
-            <div class="form-buttons">
-                <button type="reset" class="btn reset">
-                    <i class="fas fa-redo-alt"></i> Reset
-                </button>
-                <button type="button" class="btn kirim" onclick="kirimWa()">
-                    <i class="fab fa-whatsapp"></i> Kirim WA
-                </button>
-                <button type="button" class="btn salin">
-                    <i class="fas fa-copy"></i> Salin
-                </button>
-            </div>
-        </form>
-        
-        
-        <script>
-            function kirimWa() {
-                const nama = document.getElementById('nama-tamu').value.trim();
-                const alamat = document.getElementById('alamat').value.trim();
-                const link = `https://rizqidesain.github.io/udg-website-rizqidesain/Tyas&Fatikhul.html?to=${encodeURIComponent(nama)}&di=${encodeURIComponent(alamat)}`;
-        
-const pesan = 
-`Assalamu’alaikum Warahmatullahi Wabarakatuh 🙏
+            <input type="text" id="alamat" placeholder="Alamat" value="Tempat">
+            <textarea name="teks" id="teks" placeholder="Isi Pesan yang ingin Anda kirim..." readonly>
+Assalamu’alaikum Warahmatullahi Wabarakatuh 🙏
 
 Dengan segala kerendahan hati dan ungkapan syukur atas rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i tercinta:
 
-     👤 *${nama}*
-     🏠 *${alamat}*
+     👤 *${nama || 'Nama Tamu'}*
+     🏠 *${alamat || 'Alamat'}*
 
 Untuk menghadiri acara pernikahan kami:
 
@@ -276,16 +332,151 @@ Silakan klik link di atas untuk info lengkap ✨
 
 Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa terbaik.
 
-✨*Virda Tara & Fatikhul*✨
+✨ *Virda Tara & Fatikhul* ✨
+Wassalamu’alaikum Warahmatullahi Wabarakatuh 🙏
+            </textarea>
+            <div class="form-buttons">
+                <button type="reset" class="btn reset">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+                <button type="button" class="btn salin">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button type="button" class="btn kirim" onclick="kirimWa()">
+                    <i class="fab fa-whatsapp"></i> Kirim
+                </button>
+            </div>
+        </form>
+        <!-- Modal soft yang muncul di bagian atas -->
+        <div id="modal-copied" class="modal">
+            <div class="modal-content">
+                <p>Pesan berhasil disalin ke clipboard!</p>
+            </div>
+        </div>
+
+        <div class="peringatan">
+            <ul>
+                <ul>
+                    <li><i class="fas fa-exclamation-triangle"></i> Mohon Maaf untuk pesan hanya bisa menggunakan
+                        template, user hanya dapat mengubah nama dan alamat tamu yang dituju. Apabila User ingin merubah
+                        template pesan silahkan hubungi admin. Admin akan membantu mengubah pesan.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Apabila ada eror pada website Dashboard dan Website
+                        Undangan Online segera laporkan admin.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Jika masih bingung penggunaannya baca kembali
+                        panduan atau langsung chat admin</li>
+                </ul>
+
+            </ul>
+        </div>
+
+
+        <!--SKRIP KIRIM WA-->
+        <script>
+            function kirimWa() {
+                const nama = document.getElementById('nama-tamu').value.trim();
+                const alamat = document.getElementById('alamat').value.trim();
+
+                // Link dengan parameter yang dinamis
+                const link = `https://rizqidesain.github.io/udg-website-rizqidesain/Tyas&Fatikhul.html?to=${encodeURIComponent(nama)}&di=${encodeURIComponent(alamat)}`;
+
+                // Template pesan yang sudah dipersiapkan
+                const pesan =
+                    `Assalamu’alaikum Warahmatullahi Wabarakatuh 🙏
+
+Dengan segala kerendahan hati dan ungkapan syukur atas rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i tercinta:
+
+     👤 *${nama || 'Nama Tamu'}*
+     🏠 *${alamat || 'Alamat'}*
+
+Untuk menghadiri acara pernikahan kami:
+
+     💍 *Virda Tara Ningtyas & Fatikhul Izzam*
+
+Yang insyaAllah akan dilaksanakan pada:
+     📆 *Minggu - Senin, 20–21 April 2025*
+     📍 *Jl. Raya Mantup Tikung (Depan Koramil Tikung)*
+
+Kami sangat berharap kehadiran dan doa restu dari Bapak/Ibu/Saudara/i dapat memberikan keberkahan dalam langkah awal kami membangun rumah tangga.
+
+🔗 Berikut link undangan digital kami:
+${link}
+
+Silakan klik link di atas untuk info lengkap ✨
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa terbaik.
+
+✨ *Virda Tara & Fatikhul* ✨
 Wassalamu’alaikum Warahmatullahi Wabarakatuh 🙏`;
 
-        
+                // Membuka WhatsApp dengan pesan yang sudah dipersiapkan
                 const waLink = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
                 window.open(waLink, '_blank');
             }
+
         </script>
-        
-        
+        <!--SKRIP RESET-->
+        <script>
+            document.querySelector('.btn.reset').addEventListener('click', function () {
+                document.getElementById('nama-tamu').value = '';  // Mengosongkan input nama
+                document.getElementById('alamat').value = 'Tempat';  // Mengatur alamat kembali ke 'Tempat'
+                document.getElementById('teks').value = '';  // Mengosongkan textarea
+            });
+        </script>
+        <!--SKRIP SALIN-->
+        <script>
+            // Script untuk tombol salin
+            document.querySelector('.btn.salin').addEventListener('click', function () {
+                const nama = document.getElementById('nama-tamu').value.trim();
+                const alamat = document.getElementById('alamat').value.trim();
+
+                // Link dengan parameter yang dinamis
+                const link = `https://rizqidesain.github.io/udg-website-rizqidesain/Tyas&Fatikhul.html?to=${encodeURIComponent(nama)}&di=${encodeURIComponent(alamat)}`;
+
+                // Template pesan yang sudah dipersiapkan
+                const pesan =
+                    `Assalamu’alaikum Warahmatullahi Wabarakatuh 🙏
+
+Dengan segala kerendahan hati dan ungkapan syukur atas rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i tercinta:
+
+     👤 *${nama || 'Nama Tamu'}*
+     🏠 *${alamat || 'Alamat'}*
+
+Untuk menghadiri acara pernikahan kami:
+
+     💍 *Virda Tara Ningtyas & Fatikhul Izzam*
+
+Yang insyaAllah akan dilaksanakan pada:
+     📆 *Minggu - Senin, 20–21 April 2025*
+     📍 *Jl. Raya Mantup Tikung (Depan Koramil Tikung)*
+
+Kami sangat berharap kehadiran dan doa restu dari Bapak/Ibu/Saudara/i dapat memberikan keberkahan dalam langkah awal kami membangun rumah tangga.
+
+🔗 Berikut link undangan digital kami:
+${link}
+
+Silakan klik link di atas untuk info lengkap ✨
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa terbaik.
+
+✨ *Virda Tara & Fatikhul* ✨
+Wassalamu’alaikum Warahmatullahi Wabarakatuh 🙏`;
+
+                // Salin pesan ke clipboard
+                navigator.clipboard.writeText(pesan).then(function () {
+                    // Tampilkan modal dengan efek muncul dari atas
+                    const modal = document.getElementById('modal-copied');
+                    modal.classList.add('show'); // Menambahkan kelas 'show' untuk membuat modal muncul pelan
+
+                    // Sembunyikan modal setelah 3 detik
+                    setTimeout(function () {
+                        modal.classList.remove('show'); // Menghapus kelas 'show' untuk membuat modal menghilang pelan
+                    }, 3000);
+                }, function (err) {
+                    console.error('Gagal menyalin pesan: ', err);
+                });
+            });
+
+        </script>
     </div>
 
     <div class="sticky-nav">
@@ -310,11 +501,6 @@ Wassalamu’alaikum Warahmatullahi Wabarakatuh 🙏`;
             <span>Option</span>
         </a>
     </div>
-
-
-
-
-
 
 </body>
 
