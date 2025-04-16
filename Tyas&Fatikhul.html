@@ -581,7 +581,7 @@
             padding: 3px 12px;
             border: none;
             cursor: pointer;
-            font-style: none;
+            text-decoration: none;
         }
 
         .card-events-1 i {
@@ -1383,7 +1383,7 @@
                 <p>Kepada Yth:</p>
                 <p>Bapak/Ibu/Saudara/i</p>
                 <p id="nama-tamu" style="font-size: 1.1em; font-weight: bold;">TAMU</p>
-                <p>ditempat</p>
+                <p id="alamattamu">ditempat</p>
             </div>
             <a href="#" class="btn-undangan zoom-target" id="openInvitationBtn">
                 <i class="fas fa-feather"></i> Buka Undangan
@@ -1653,7 +1653,6 @@
         </a>
     </div>
 
-
     <!--SKRIP BUKA UNDANGAN-->
     <script>
         function smoothScrollTo(target, duration) {
@@ -1718,6 +1717,7 @@
             });
         });
     </script>
+
     <!-- Lightbox Container -->
     <div id="previewOverlay"
         style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
@@ -1728,7 +1728,6 @@
             style="position:absolute; left:3%; top:50%; transform:translateY(-50%); font-size:3rem; color:white; background:none; border:none; cursor:pointer; z-index:10000;">&#10094;</button>
         <button id="nextBtn"
             style="position:absolute; right:3%; top:50%; transform:translateY(-50%); font-size:3rem; color:white; background:none; border:none; cursor:pointer; z-index:10000;">&#10095;</button>
-
     </div>
     <script>
         const fotos = Array.from(document.querySelectorAll('.foto-album'));
@@ -1798,6 +1797,7 @@
             showImage(currentIndex + 1);
         });
     </script>
+
     <!--SKRIP SCROLL-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1862,7 +1862,7 @@
             }
         });
     </script>
-    <!--SKRIP NAMA TAMU-->
+    <!-- Skrip untuk mengambil nama tamu dan alamattamu dari URL -->
     <script>
         // Fungsi untuk mengambil parameter dari URL
         function getParameterByName(name) {
@@ -1870,12 +1870,19 @@
             return urlParams.get(name);
         }
 
-        // Ambil nama tamu dari parameter 'to' dan set ke elemen dengan ID 'nama-tamu'
+        // Ambil nama tamu dan alamattamu dari parameter URL
         const namaTamu = getParameterByName('to');
+        const alamattamu = getParameterByName('di');
+
+        // Set nama tamu ke elemen dengan ID 'nama-tamu'
         if (namaTamu) {
             document.getElementById('nama-tamu').textContent = namaTamu;
         }
 
+        // Set alamat ke elemen dengan ID 'alamattamu'
+        if (alamattamu) {
+            document.getElementById('alamattamu').textContent = alamattamu;
+        }
     </script>
     <!--SKRIP COUNTDOWN-->
     <script>
