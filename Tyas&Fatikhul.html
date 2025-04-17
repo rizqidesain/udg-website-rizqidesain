@@ -809,27 +809,98 @@
             width: 90vw;
             z-index: 3;
         }
-
-        .gunungan-kiri {
-            position: absolute;
-            animation: intip-gunungan 2.5s ease-out forwards;
-            animation-delay: 1s;
-            width: 30vw;
-            left: 1vh;
-            margin-top: 300px;
-            z-index: 3;
-            transform-origin: left center;
+    </style>
+    <!--========== MAPS ==========-->
+    <style>
+        /* ============== bride ============== */
+        .peta {
+            position: relative;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            margin-top: 5vh;
         }
 
-        .gunungan-kanan {
+        .peta::before {
+            content: "";
             position: absolute;
-            animation: intip-kanan 2.5s ease-out forwards;
-            animation-delay: 1s;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/tyas/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+
+        .card-peta {
+            background: rgba(126, 6, 2, 0.72);
+            padding: 3vh 6vw;
+            border-radius: 10vw;
+            border: 3px solid rgb(245, 187, 0);
+            text-align: center;
+            justify-content: start;
+            max-width: 90vw;
+            width: 90%;
+            height: auto;
+            z-index: 2;
+        }
+
+        .card-peta iframe {
+            width: 100%;
+            height: 50vh;
+            border-radius: 20px;
+        }
+
+        .card-peta h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            margin-top: 0.3em;
+            margin-bottom: 0.9em;
+            background: linear-gradient(to right, #FFD700, #ff9747, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gunungan {
+            position: absolute;
             width: 30vw;
-            right: 1vh;
-            margin-top: 300px;
+            bottom: 5vh;
+            right: 1.5vh;
+            pointer-events: none;
             z-index: 3;
-            transform-origin: right center;
+        }
+
+        @keyframes gelengGunungan {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: rotate(4deg);
+            }
+
+            75% {
+                transform: rotate(-4deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
         }
     </style>
     <!--========== ALBUM ==========-->
@@ -1221,6 +1292,74 @@
             filter: brightness(1.2);
         }
     </style>
+    <!--========== QUOTES ==========-->
+    <style>
+        /* ============== COUNTDOWN ============== */
+        .quotes {
+            height: 820px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+
+            background-image: url('img/tyas/album-5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+
+            animation: slideQuotesBg 15s infinite ease-in-out;
+        }
+
+        @keyframes slideQuotesBg {
+            0% {
+                background-image: url('img/tyas/album-1.jpg');
+            }
+
+            33% {
+                background-image: url('img/tyas/album-2.jpg');
+            }
+
+            66% {
+                background-image: url('img/tyas/album-3.jpg');
+            }
+
+            100% {
+                background-image: url('img/tyas/album-1.jpg');
+            }
+        }
+
+        .card-quotes {
+            background: rgba(97, 102, 111, 0.79);
+            text-align: center;
+            max-width: 100vw;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            /* Horizontal center */
+            align-items: center;
+            /* Vertical center */
+        }
+
+        .judul-quotes {
+            font-family: 'Aref Ruqaa', serif;
+            font-weight: 700;
+            font-size: 0.8em;
+            color: #fff;
+            padding: 10px 15px;
+            position: absolute;
+            z-index: 1;
+        }
+        .judul-quotes span {
+            font-family: 'Aref Ruqaa', serif;
+        }
+    </style>
     <!--========== HARUS DIBAWAH ==========-->
     <style>
         .hidden-section {
@@ -1494,6 +1633,18 @@
         </div>
     </section>
 
+    <section class="peta hidden-section">
+        <img src="img/tyas/gunungan.png" alt="Bunga" class="gunungan slide-up">
+        <div class="card-peta">
+            <h2 class="slide-down">Google Maps</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.5250294240086!2d112.393824!3d-7.180769000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTAnNTAuOCJTIDExMsKwMjMnMzcuOCJF!5e0!3m2!1sid!2sid!4v1744866990901!5m2!1sid!2sid"
+                width="100%" height="450" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
     <section id="album" class="album hidden-section">
         <h2 class="judul-section">The Memorable Moments</h2>
         <div class="grid-album">
@@ -1503,6 +1654,18 @@
             <img src="img/tyas/album-4.jpg" class="foto-album zoom-target" alt="Album 4">
             <img src="img/tyas/album-5.jpg" class="foto-album zoom-target" alt="Album 5">
             <img src="img/tyas/album-6.jpg" class="foto-album zoom-target" alt="Album 6">
+        </div>
+    </section>
+
+    <section class="quotes hidden-section">
+        <div class="card-quotes">
+            <p class="judul-quotes slide-up">
+                "Dan di antara tanda-tanda kekuasaan-Nya, Dia menciptakan untukmu pasangan-pasangan dari jenismu
+                sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antara kamu rasa
+                kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
+                berpikir." <br>
+                <span style="font-size: 0.8em;">(QS. Ar-Rum: 21)</span>
+            </p>
         </div>
     </section>
 
@@ -1838,6 +2001,7 @@
             const awan2 = document.querySelector('.awan-2');
             const bungabawah = document.querySelector('.bunga-bawah');
             const bungaevents = document.querySelector('.bunga-events');
+            const wayang = document.querySelector('.gunungan');
 
             if (awan1) {
                 awan1.addEventListener('animationend', function () {
@@ -1858,6 +2022,11 @@
             if (bungaevents) {
                 bungaevents.addEventListener('animationend', function () {
                     bungaevents.style.animation = 'angin-lembut 6s ease-in-out infinite';
+                });
+            }
+            if (wayang) {
+                wayang.addEventListener('animationend', function () {
+                    wayang.style.animation = 'gelengGunungan 6s ease-in-out infinite';
                 });
             }
         });
